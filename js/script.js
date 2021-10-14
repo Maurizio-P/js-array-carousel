@@ -23,24 +23,72 @@ const text = [
 ]
 
 const heroImg = document.querySelector(".hero-large")
-const titleText = document.querySelector(".text-img")
+const titleImg = document.querySelector(".title-img")
 const carousel = document.querySelector(".side-carousel")
 
+console.log(titleImg)
+
+let currentSelect = 0
+
+let x = ""
+
+
 for (let x = 0; x < items.length; x++) {
-
+    
     const imgCurrent = items[x]
-
+    
     let opZero = ""
+    
+    if (x === currentSelect) {
+        opZero = "active"
+    }
+    
+    const tagImg = `<img class="${opZero}" src="${imgCurrent}" alt="">`
+    
+    heroImg.innerHTML += tagImg
+    
+    const titleText = `<div class="${opZero} text-img"><h4>${title[x]}</h4>${text[x]}</div>`
+    
+    document.querySelector(".title-img").innerHTML += titleText
+}
 
-    if (opZero === items[x]) {
-        opZero = "opacity-0"
+const arrowTop = document.querySelector(".arrow-top")
+const arrowBottom= document.querySelector(".arrow-bottom")
+
+arrowTop.addEventListener("click", function(){
+
+    const activeImg = document.querySelector(".active")
+    activeImg.classList.remove("active")
+
+    currentSelect--
+
+    if (currentSelect < 0 ) {
+        currentSelect = items.length - 1
     }
 
-    const tagImg = `<img class="${opZero}" src="${imgCurrent}" alt="">`
+    console.log("current select", currentSelect)
 
-    heroImg.innerHTML += tagImg
+    const imgAdding = heroImg.querySelectorAll("img")
+    const imgActive = imgAdding[currentSelect]
 
-    const titleImg = `<div class="${opZero}">${title[x]}</div>`
+    imgActive.classList.add("active")
+})
 
-    titleText.innerHTML += titleImg
-}
+arrowBottom.addEventListener("click", function(){
+
+    const activeImg = document.querySelector(".active")
+    activeImg.classList.remove("active")
+
+    currentSelect++
+
+    if (currentSelect > items.length - 1 ) {
+        currentSelect = 0
+    }
+
+    console.log("current select", currentSelect)
+
+    const imgAdding = heroImg.querySelectorAll("img")
+    const imgActive = imgAdding[currentSelect]
+
+    imgActive.classList.add("active")
+})
