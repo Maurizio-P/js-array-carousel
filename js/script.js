@@ -57,8 +57,11 @@ const arrowBottom= document.querySelector(".arrow-bottom")
 
 arrowTop.addEventListener("click", function(){
 
-    const activeImg = document.querySelector(".active")
+    const activeImg = document.querySelector(".hero-large>.active")
     activeImg.classList.remove("active")
+
+    const activeText = document.querySelector(".title-img>.active ")
+    activeText.classList.remove("active")
 
     currentSelect--
 
@@ -71,13 +74,20 @@ arrowTop.addEventListener("click", function(){
     const imgAdding = heroImg.querySelectorAll("img")
     const imgActive = imgAdding[currentSelect]
 
+    const textAdding = document.querySelectorAll(".text-img")
+    const textActive = textAdding[currentSelect]
+
     imgActive.classList.add("active")
+    textActive.classList.add("active")
 })
 
 arrowBottom.addEventListener("click", function(){
 
-    const activeImg = document.querySelector(".active")
+    const activeImg = document.querySelector(".hero-large>.active")
     activeImg.classList.remove("active")
+
+    const activeText = document.querySelector(".title-img>.active ")
+    activeText.classList.remove("active")
 
     currentSelect++
 
@@ -90,5 +100,9 @@ arrowBottom.addEventListener("click", function(){
     const imgAdding = heroImg.querySelectorAll("img")
     const imgActive = imgAdding[currentSelect]
 
+    const textAdding = document.querySelectorAll(".text-img")
+    const textActive = textAdding[currentSelect]
+
     imgActive.classList.add("active")
+    textActive.classList.add("active")
 })

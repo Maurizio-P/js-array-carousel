@@ -18,17 +18,15 @@
     right: 0;
     opacity: 0;
     z-index: 99;
+    color: white;
 }
 
+
+
+.hero-large>img.active,
 .title-img > .text-img.active {
     opacity: 1;
 }
-
-.hero-large>img.active {
-    opacity: 1;
-}
-
-text
 
 /* .active {
     opacity: 1;
