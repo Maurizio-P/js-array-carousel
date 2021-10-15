@@ -10,6 +10,7 @@
     left: 0;
     object-fit: cover;
     opacity: 0;
+    transition: opacity .5s;
 }
 
 .text-img {
@@ -20,6 +21,7 @@
     z-index: 99;
     color: white;
     width: 300px;
+    transition: opacity .5s;
 }
 
 .hero-large>img.active,
