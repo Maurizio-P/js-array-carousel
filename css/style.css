@@ -19,15 +19,27 @@
     opacity: 0;
     z-index: 99;
     color: white;
+    width: 300px;
 }
-
-
 
 .hero-large>img.active,
 .title-img > .text-img.active {
     opacity: 1;
 }
 
-/* .active {
-    opacity: 1;
-} */
+/* per col-2 */
+
+.side-carousel > img {
+    width: 100%;
+    height: 120px;
+}
+
+.arrow-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}

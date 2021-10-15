@@ -106,3 +106,14 @@ arrowBottom.addEventListener("click", function(){
     imgActive.classList.add("active")
     textActive.classList.add("active")
 })
+
+
+//// PER COL2 ////
+
+const imgSide = document.querySelector(".col-2 .side-carousel")
+
+// imgSide.innerHTML += `  <img class="side-img" src="img/01.jpg">
+//                         <img class="side-img" src="img/02.jpg">
+//                         <img class="side-img" src="img/03.jpg">
+//                         <img class="side-img" src="img/04.jpg">
+//                         <img class="side-img" src="img/05.jpg">`
